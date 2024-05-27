@@ -31,7 +31,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors(
   {
-    origin: ["https://know-feed2.vercel.app"],
+    origin: ["https://know-feed-api.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true
   }
@@ -50,7 +50,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 app.get("/", (req, res) => {
-  res.send(`<h1>Hello</h1>`);
+  res.json("Hello");
 })
 
 /* ROUTES WITH FILES */
